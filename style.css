@@ -1,0 +1,163 @@
+/* Parco Talon — stile comune */
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap');
+
+:root {
+  --bosco: #23412f;      /* verde bosco: titoli, intestazione */
+  --reno: #4f6d7a;       /* grigio-azzurro del fiume: link, dettagli */
+  --lichene: #c5cf8a;    /* accento, usato poco */
+  --inchiostro: #1e2a22; /* testo */
+  --foglio: #ffffff;     /* sfondo */
+  --nebbia: #eef1ec;     /* fasce chiare */
+  --misura: 68ch;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-padding-top: 5rem; }
+
+body {
+  margin: 0;
+  background: var(--foglio);
+  color: var(--inchiostro);
+  font-family: 'Source Sans 3', 'Segoe UI', Helvetica, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Spectral', Georgia, 'Times New Roman', serif;
+  font-weight: 600;
+  color: var(--bosco);
+  line-height: 1.2;
+  margin: 0 0 0.6em;
+}
+h1 { font-size: clamp(2.4rem, 7vw, 4.5rem); letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
+h3 { font-size: 1.3rem; }
+
+p { margin: 0 0 1em; max-width: var(--misura); }
+
+a { color: var(--reno); text-underline-offset: 0.18em; }
+a:hover { color: var(--bosco); }
+:focus-visible { outline: 3px solid var(--reno); outline-offset: 3px; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* Intestazione */
+.testata {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bosco);
+  color: #fff;
+}
+.testata .contenitore {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  padding-block: 0.8rem;
+}
+.marchio {
+  font-family: 'Spectral', Georgia, serif;
+  font-size: 1.35rem;
+  color: #fff;
+  text-decoration: none;
+}
+.menu { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; margin: 0; padding: 0; list-style: none; }
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 0;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+}
+.menu a:hover, .menu a[aria-current="page"] { border-bottom-color: var(--lichene); color: #fff; }
+
+.contenitore { width: min(100% - 2.5rem, 72rem); margin-inline: auto; }
+
+/* Apertura della home */
+.apertura { padding: clamp(3rem, 8vw, 6rem) 0 0; }
+.apertura .sottotitolo {
+  font-family: 'Spectral', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  color: var(--reno);
+  max-width: 40ch;
+}
+.isoipse { width: 100%; height: auto; color: var(--bosco); margin-top: 2rem; }
+
+/* Sezioni */
+.sezione { padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
+.sezione.chiara { background: var(--nebbia); }
+
+.tre-colonne {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 2rem 3rem;
+}
+.tre-colonne h3 a { color: var(--bosco); text-decoration: none; }
+.tre-colonne h3 a:hover { text-decoration: underline; }
+
+.nota { font-size: 0.95rem; color: #4a564e; }
+
+/* Pagina mappa */
+.mappa-cornice {
+  width: 100%;
+  height: min(75vh, 48rem);
+  border: 1px solid #c9d1ca;
+  background: var(--nebbia);
+}
+.mappa-cornice iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+/* Erbario */
+.ricerca { margin: 1.5rem 0 2rem; display: flex; flex-wrap: wrap; gap: 0.75rem 1rem; align-items: center; }
+.ricerca label { font-weight: 600; }
+.ricerca input {
+  font: inherit;
+  padding: 0.6rem 0.8rem;
+  min-width: min(100%, 22rem);
+  border: 1px solid #9aa79e;
+  border-radius: 4px;
+}
+.schede {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.scheda { border-top: 4px solid var(--bosco); padding-top: 1rem; }
+.scheda .foto {
+  aspect-ratio: 4 / 3;
+  background: var(--nebbia);
+  display: grid;
+  place-items: center;
+  color: #6b766e;
+  font-size: 0.9rem;
+  margin-bottom: 0.9rem;
+  overflow: hidden;
+}
+.scheda .foto img { width: 100%; height: 100%; object-fit: cover; }
+.scheda h3 { font-style: italic; font-weight: 400; margin-bottom: 0.2rem; }
+.scheda .comune { margin: 0 0 0.6rem; color: var(--reno); }
+.scheda dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 0.15rem 0.8rem; font-size: 0.95rem; }
+.scheda dt { font-weight: 600; }
+.scheda dd { margin: 0; }
+.vuoto { padding: 2rem 0; }
+
+/* Piè di pagina */
+.piede { background: var(--bosco); color: #dfe6df; padding: 2.5rem 0; font-size: 0.95rem; }
+.piede a { color: #fff; }
+.piede p { margin: 0 0 0.5em; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .isoipse path { stroke-dasharray: 1600; stroke-dashoffset: 1600; animation: traccia 2.4s ease-out forwards; }
+  .isoipse path:nth-child(2) { animation-delay: 0.15s; }
+  .isoipse path:nth-child(3) { animation-delay: 0.3s; }
+  .isoipse path:nth-child(4) { animation-delay: 0.45s; }
+  .isoipse path:nth-child(5) { animation-delay: 0.6s; }
+  @keyframes traccia { to { stroke-dashoffset: 0; } }
+}

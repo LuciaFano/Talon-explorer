@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mappa – Parco Talon</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="testata">
+    <div class="contenitore">
+      <a class="marchio" href="index.html">Parco Talon</a>
+      <nav aria-label="Menu principale">
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mappa.html" aria-current="page">Mappa</a></li>
+          <li><a href="erbario.html">Erbario</a></li>
+          <li><a href="progetto.html">Il progetto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="sezione">
+    <div class="contenitore">
+      <h1>Mappa delle osservazioni</h1>
+      <p>Ogni punto è una pianta osservata e identificata nel parco. Clicca su un punto per vederne il nome; usa i pulsanti + e − per avvicinarti.</p>
+      <p class="nota">La mappa mostra le specie rilevate durante il lavoro di tesi, non tutta la flora del parco: le zone senza punti possono essere state semplicemente meno esplorate.</p>
+
+      <!-- La mappa esportata con qgis2web va nella cartella "mappa/" (deve contenere index.html) -->
+      <div class="mappa-cornice">
+        <iframe src="mappa/index.html" title="Mappa interattiva delle piante osservate nel Parco Talon" loading="lazy"></iframe>
+      </div>
+      <p class="nota"><a href="mappa/index.html">Apri la mappa a schermo intero</a></p>
+    </div>
+  </main>
+
+  <footer class="piede">
+    <div class="contenitore">
+      <p>Progetto di tesi di [Nome Cognome], Università di Bologna.</p>
+      <p>Mappa di base © contributori <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

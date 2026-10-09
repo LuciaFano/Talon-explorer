@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Erbario digitale – Parco Talon</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="testata">
+    <div class="contenitore">
+      <a class="marchio" href="index.html">Parco Talon</a>
+      <nav aria-label="Menu principale">
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mappa.html">Mappa</a></li>
+          <li><a href="erbario.html" aria-current="page">Erbario</a></li>
+          <li><a href="progetto.html">Il progetto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="sezione">
+    <div class="contenitore">
+      <h1>Erbario digitale</h1>
+      <p>Le specie osservate nel parco, una scheda per ciascuna. Cerca per nome scientifico, nome comune o famiglia.</p>
+
+      <div class="ricerca">
+        <label for="cerca">Cerca una specie</label>
+        <input id="cerca" type="search" placeholder="es. Quercus, roverella, Fagaceae" autocomplete="off">
+      </div>
+
+      <!--
+        COME AGGIUNGERE UNA SPECIE
+        Copia un blocco <li class="scheda"> ... </li> e cambia i testi.
+        - data-cerca: tutte le parole con cui si deve trovare la scheda (in minuscolo)
+        - foto: metti l'immagine in erbario/img/ e scrivi il percorso nell'attributo src
+        Questi blocchi si possono anche generare in automatico dallo script R.
+      -->
+      <ul class="schede" id="schede">
+        <li class="scheda" data-cerca="[nome scientifico] [nome comune] [famiglia]">
+          <div class="foto"><span>[Foto]</span><!-- <img src="erbario/img/nome-file.jpg" alt="[Nome scientifico]"> --></div>
+          <h3>[Nome scientifico]</h3>
+          <p class="comune">[Nome comune]</p>
+          <dl>
+            <dt>Famiglia</dt><dd>[Famiglia]</dd>
+            <dt>Forma</dt><dd>[albero / arbusto / erbacea]</dd>
+            <dt>Origine</dt><dd>[nativa / esotica]</dd>
+            <dt>Dove</dt><dd>[zona del parco]</dd>
+          </dl>
+        </li>
+        <li class="scheda" data-cerca="[nome scientifico] [nome comune] [famiglia]">
+          <div class="foto"><span>[Foto]</span></div>
+          <h3>[Nome scientifico]</h3>
+          <p class="comune">[Nome comune]</p>
+          <dl>
+            <dt>Famiglia</dt><dd>[Famiglia]</dd>
+            <dt>Forma</dt><dd>[albero / arbusto / erbacea]</dd>
+            <dt>Origine</dt><dd>[nativa / esotica]</dd>
+            <dt>Dove</dt><dd>[zona del parco]</dd>
+          </dl>
+        </li>
+      </ul>
+      <p class="vuoto" id="vuoto" hidden>Nessuna specie corrisponde alla ricerca. Prova con il genere (es. "Acer") o con la famiglia.</p>
+    </div>
+  </main>
+
+  <footer class="piede">
+    <div class="contenitore">
+      <p>Progetto di tesi di [Nome Cognome], Università di Bologna.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Filtra le schede mentre si scrive
+    const campo = document.getElementById('cerca');
+    const schede = document.querySelectorAll('#schede .scheda');
+    const vuoto = document.getElementById('vuoto');
+    campo.addEventListener('input', () => {
+      const testo = campo.value.trim().toLowerCase();
+      let visibili = 0;
+      schede.forEach(s => {
+        const ok = s.dataset.cerca.toLowerCase().includes(testo);
+        s.hidden = !ok;
+        if (ok) visibili++;
+      });
+      vuoto.hidden = visibili > 0;
+    });
+  </script>
+</body>
+</html>

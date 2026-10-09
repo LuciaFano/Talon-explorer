@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parco Talon – La flora del Parco della Chiusa</title>
+  <meta name="description" content="Mappa e erbario digitale della flora del Parco della Chiusa (Parco Talon), Casalecchio di Reno.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="testata">
+    <div class="contenitore">
+      <a class="marchio" href="index.html">Parco Talon</a>
+      <nav aria-label="Menu principale">
+        <ul class="menu">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="mappa.html">Mappa</a></li>
+          <li><a href="erbario.html">Erbario</a></li>
+          <li><a href="progetto.html">Il progetto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="apertura">
+      <div class="contenitore">
+        <h1>Le piante del Parco della Chiusa</h1>
+        <p class="sottotitolo">Dove crescono, come riconoscerle, cosa raccontano del parco.</p>
+      </div>
+      <!-- Linee di livello stilizzate: richiamano le colline del parco -->
+      <svg class="isoipse" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M0 150 C 180 120, 300 60, 470 70 S 760 140, 900 90 S 1100 30, 1200 50" opacity="0.9"/>
+          <path d="M0 155 C 200 135, 320 85, 480 92 S 770 150, 910 112 S 1110 60, 1200 75" opacity="0.7"/>
+          <path d="M0 158 C 220 148, 340 108, 490 113 S 780 156, 920 132 S 1120 88, 1200 100" opacity="0.5"/>
+          <path d="M0 160 C 240 156, 360 130, 500 133 S 790 160, 930 150 S 1130 116, 1200 125" opacity="0.35"/>
+          <path d="M60 160 C 260 160, 380 150, 510 152 S 800 160, 940 160 S 1140 140, 1200 148" opacity="0.2"/>
+        </g>
+      </svg>
+    </section>
+
+    <section class="sezione chiara">
+      <div class="contenitore">
+        <h2>Il parco</h2>
+        <p>Il Parco della Chiusa, chiamato anche Parco Talon, si estende sulla destra del Reno a Casalecchio di Reno. Nasce dalle proprietà dei marchesi Sampieri Talon e dal 1975 è di proprietà comunale e aperto al pubblico.</p>
+        <p>Tra boschi collinari, prati e i resti del giardino storico della villa, il parco ospita una flora varia a pochi passi dalla città. È attraversato dal Sentiero dei Bregoli, e nell'ex Limonaia della villa ha sede il Vivaio comunale per la biodiversità.</p>
+        <p class="nota">[Verifica e completa questi dati con le fonti della tesi.]</p>
+      </div>
+    </section>
+
+    <section class="sezione">
+      <div class="contenitore">
+        <h2>Cosa trovi qui</h2>
+        <div class="tre-colonne">
+          <div>
+            <h3><a href="mappa.html">Mappa interattiva</a></h3>
+            <p>I punti in cui sono state osservate e identificate le specie nel parco. Clicca su un punto per vedere di che pianta si tratta.</p>
+          </div>
+          <div>
+            <h3><a href="erbario.html">Erbario digitale</a></h3>
+            <p>Una scheda per ogni specie, con foto, nome scientifico e comune, famiglia e dove trovarla nel parco.</p>
+          </div>
+          <div>
+            <h3><a href="progetto.html">Il progetto</a></h3>
+            <p>Come sono stati raccolti e verificati i dati, e a cosa serve questo lavoro.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="piede">
+    <div class="contenitore">
+      <p>Progetto di tesi di [Nome Cognome], Corso di laurea in Scienze e Tecnologie per il Verde, Università di Bologna.</p>
+      <p>Mappa di base © contributori <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>
